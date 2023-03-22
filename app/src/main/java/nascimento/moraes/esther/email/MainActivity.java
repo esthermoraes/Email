@@ -44,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Não há nenhum APP que possa realizar essa operação", Toast.LENGTH_LONG).show();
                 }
             }
+
         });
-    };
+    }
+}
