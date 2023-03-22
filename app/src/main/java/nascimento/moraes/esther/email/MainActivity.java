@@ -33,16 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(Intent.ACTION_SENDTO);
                 i.setData(Uri.parse("mailto:"));
-                String[] emails = new String[] {email};
+                String[] emails = new String[]{email};
                 i.putExtra(Intent.EXTRA_EMAIL, emails);
-                i.putExtra(Intent.EXTRA_SUBJECT,assunto);
-                i.putExtra(Intent.EXTRA_TEXT,texto);
+                i.putExtra(Intent.EXTRA_SUBJECT, assunto);
+                i.putExtra(Intent.EXTRA_TEXT, texto);
 
                 try {
                     startActivity(Intent.createChooser(i, "Escolha o APP:"));
-                }
-                catch (ActivityNotFoundException e) {
-                    Toast.makeText(MainActivity.this, "Não há nenhum APP que possa realizar essa operação" , Toast.LENGTH_LONG).show();
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(MainActivity.this, "Não há nenhum APP que possa realizar essa operação", Toast.LENGTH_LONG).show();
                 }
             }
         });
