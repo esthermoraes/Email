@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtendo dados digitados pelo usuário
-                EditText etEmail = (EditText) findViewById(R.id.etEmail); // Uso do metodo findViewById para localizar um elemento atraves de seu Id
-                String email = etEmail.getText().toString(); //
+                EditText etEmail = (EditText) findViewById(R.id.etEmail); // Uso do metodo findViewById para localizar o elemento atraves de seu Id
+                String email = etEmail.getText().toString(); // Retorna a informação digitada e "coletada" no/do elemento em forma de String
                 EditText etAssunto = (EditText) findViewById(R.id.etAssunto);
                 String assunto = etAssunto.getText().toString();
                 EditText etTexto = (EditText) findViewById(R.id.etTexto);
