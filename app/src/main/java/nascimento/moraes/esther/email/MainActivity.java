@@ -24,22 +24,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtendo dados digitados pelo usuário
-                EditText etEmail = (EditText) findViewById(R.id.etEmail);
-                String email = etEmail.getText().toString();
+                EditText etEmail = (EditText) findViewById(R.id.etEmail); // Uso do metodo findViewById para localizar um elemento atraves de seu Id
+                String email = etEmail.getText().toString(); //
                 EditText etAssunto = (EditText) findViewById(R.id.etAssunto);
                 String assunto = etAssunto.getText().toString();
                 EditText etTexto = (EditText) findViewById(R.id.etTexto);
                 String texto = etTexto.getText().toString();
 
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto:"));
+                Intent i = new Intent(Intent.ACTION_SENDTO); // Pegando o parametro e passando ele de ação para poder enviar para alguem
+                i.setData(Uri.parse("mailto:")); // Indicando que seja respondido atraves do SENDTO e da Uri | mailto -> relacionado ao e-mail
                 String[] emails = new String[]{email};
                 i.putExtra(Intent.EXTRA_EMAIL, emails);
                 i.putExtra(Intent.EXTRA_SUBJECT, assunto);
                 i.putExtra(Intent.EXTRA_TEXT, texto);
 
                 try {
-                    startActivity(Intent.createChooser(i, "Escolha o APP:"));
+                    startActivity(Intent.createChooser(i, "Escolha o APP:")); // Execução do Intent
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(MainActivity.this, "Não há nenhum APP que possa realizar essa operação", Toast.LENGTH_LONG).show();
                 }
